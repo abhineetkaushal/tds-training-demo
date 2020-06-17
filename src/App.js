@@ -1,9 +1,16 @@
 import React from "react";
 import "./App.css";
 import superheroData from "./superheroes";
+import Heading from "@tds/core-heading";
+import Box from "@tds/core-box";
+import UnorderedList from "@tds/core-unordered-list";
+import Card from "@tds/core-card";
+import FlexGrid from "@tds/core-flex-grid";
+import ChevronLink from "@tds/core-link";
+import Image from "@tds/core-image";
 function App() {
   return (
-    <div class="main">
+    <div className="main">
       <h1>Superheroes List</h1>
       {superheroData.map((item) => (
         <div key={item.name}>
@@ -21,5 +28,44 @@ function App() {
     </div>
   );
 }
+export function AppTds() {
+  return (
+    <Box horizontal={3} vertical={5}>
+      <FlexGrid>
+        <FlexGrid.Row horizontalAlign="center">
+          <FlexGrid.Col>
+            <Heading level="h1">Superheroes List</Heading>
+          </FlexGrid.Col>
+        </FlexGrid.Row>
+        <FlexGrid.Row>
+          {superheroData.map((item) => (
+            <FlexGrid.Col xl={4}>
+              <HeroCard item={item}></HeroCard>
+            </FlexGrid.Col>
+          ))}
+        </FlexGrid.Row>
+      </FlexGrid>
+    </Box>
+  );
+}
+const HeroCard = ({ item }) => (
+  <Box vertical={5} key={item.name} between={2}>
+    <Image src={item.image.url} height="200" width="150" />
+    <Heading level="h2">{item.name}</Heading>
+
+    <Card fullHeight>
+      <Box between={3}>
+        <UnorderedList listStyle="checkmark">
+          {Object.keys(item.powerstats).map((stat) => (
+            <UnorderedList.Item key={stat}>
+              <span>{stat}</span>:<span>{item.powerstats[stat]}</span>
+            </UnorderedList.Item>
+          ))}
+        </UnorderedList>
+        <ChevronLink href="#">Details</ChevronLink>
+      </Box>
+    </Card>
+  </Box>
+);
 
 export default App;

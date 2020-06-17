@@ -1,16 +1,17 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
-import App from "./App";
+import { AppTds } from "./App";
 import * as serviceWorker from "./serviceWorker";
 import { Switch, Route, BrowserRouter as Router } from "react-router-dom";
 import Details from "./details";
-
+import CSSReset from "@tds/core-css-reset";
 ReactDOM.render(
   <React.StrictMode>
+    <CSSReset />
     <Router>
       <Switch>
-        <Route path="/" exact component={App}></Route>
+        <Route path="/" exact component={AppTds}></Route>
         <Route path="/:id" component={Details}></Route>
       </Switch>
     </Router>
