@@ -6,8 +6,11 @@ import Box from "@tds/core-box";
 import UnorderedList from "@tds/core-unordered-list";
 import Card from "@tds/core-card";
 import FlexGrid from "@tds/core-flex-grid";
-import ChevronLink from "@tds/core-link";
+import ChevronLink from "@tds/core-chevron-link";
 import Image from "@tds/core-image";
+import WaveDivider from "@tds/core-wave-divider";
+import DimpleDivider from "@tds/core-dimple-divider";
+import HairlineDivider from "@tds/core-hairline-divider";
 function App() {
   return (
     <div className="main">
@@ -51,17 +54,22 @@ export function AppTds() {
 const HeroCard = ({ item }) => (
   <Box vertical={5} key={item.name} between={2}>
     <Image src={item.image.url} height="200" width="150" />
+    <HairlineDivider gradient />
     <Heading level="h2">{item.name}</Heading>
-
-    <Card fullHeight>
-      <Box between={3}>
-        <UnorderedList listStyle="checkmark">
-          {Object.keys(item.powerstats).map((stat) => (
-            <UnorderedList.Item key={stat}>
-              <span>{stat}</span>:<span>{item.powerstats[stat]}</span>
-            </UnorderedList.Item>
-          ))}
-        </UnorderedList>
+    <HairlineDivider gradient />
+    <Card>
+      <DimpleDivider />
+      <Box between={2}>
+        <Box between={2}>
+          <UnorderedList listStyle="checkmark">
+            {Object.keys(item.powerstats).map((stat) => (
+              <UnorderedList.Item key={stat}>
+                <span>{stat}</span>:<span>{item.powerstats[stat]}</span>
+              </UnorderedList.Item>
+            ))}
+          </UnorderedList>
+        </Box>
+        <DimpleDivider />
         <ChevronLink href="#">Details</ChevronLink>
       </Box>
     </Card>
