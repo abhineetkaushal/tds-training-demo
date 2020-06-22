@@ -1,16 +1,14 @@
 import React from "react";
 import "./App.css";
 import superheroData from "./superheroes";
-import Heading from "@tds/core-heading";
 import Box from "@tds/core-box";
-import UnorderedList from "@tds/core-unordered-list";
 import Card from "@tds/core-card";
+import Heading from "@tds/core-heading";
 import FlexGrid from "@tds/core-flex-grid";
-import ChevronLink from "@tds/core-chevron-link";
+import UnorderedList from "@tds/core-unordered-list";
 import Image from "@tds/core-image";
-import WaveDivider from "@tds/core-wave-divider";
-import DimpleDivider from "@tds/core-dimple-divider";
-import HairlineDivider from "@tds/core-hairline-divider";
+import ChevronLink from "@tds/core-chevron-link";
+import { ExpandCollapse, Accordion } from "@tds/core-expand-collapse";
 function App() {
   return (
     <div className="main">
@@ -33,16 +31,16 @@ function App() {
 }
 export function AppTds() {
   return (
-    <Box horizontal={3} vertical={5}>
+    <Box className="main" vertical={3} horizontal={3}>
       <FlexGrid>
-        <FlexGrid.Row horizontalAlign="center">
+        <FlexGrid.Row>
           <FlexGrid.Col>
             <Heading level="h1">Superheroes List</Heading>
           </FlexGrid.Col>
         </FlexGrid.Row>
         <FlexGrid.Row>
           {superheroData.map((item) => (
-            <FlexGrid.Col xl={4}>
+            <FlexGrid.Col md={4} xl={4}>
               <HeroCard item={item}></HeroCard>
             </FlexGrid.Col>
           ))}
@@ -51,29 +49,47 @@ export function AppTds() {
     </Box>
   );
 }
-const HeroCard = ({ item }) => (
-  <Box vertical={5} key={item.name} between={2}>
-    <Image src={item.image.url} height="200" width="150" />
-    <HairlineDivider gradient />
-    <Heading level="h2">{item.name}</Heading>
-    <HairlineDivider gradient />
-    <Card>
-      <DimpleDivider />
-      <Box between={2}>
-        <Box between={2}>
-          <UnorderedList listStyle="checkmark">
-            {Object.keys(item.powerstats).map((stat) => (
-              <UnorderedList.Item key={stat}>
-                <span>{stat}</span>:<span>{item.powerstats[stat]}</span>
-              </UnorderedList.Item>
-            ))}
-          </UnorderedList>
+function HeroCard({ item }) {
+  return (
+    <Box between={2} vertical={5} key={item.name}>
+      <Image src={item.image.url} rounded="corners" height="200" width="200" />
+      <Heading level="h2">{item.name}</Heading>
+      <Card fullHeight>
+        <Box between={3}>
+          <Accordion topDivider={false}>
+            <Accordion.Panel id="stats" header="Stats">
+              <UnorderedList>
+                {Object.keys(item.powerstats).map((stat) => {
+                  const statValue = item.powerstats[stat];
+                  return (
+                    <UnorderedList.Item
+                      itemStyle={statValue > 50 ? "checkmark" : "x"}
+                      key={stat}
+                    >
+                      <span>{stat}</span>:<span>{statValue}</span>
+                    </UnorderedList.Item>
+                  );
+                })}
+              </UnorderedList>
+            </Accordion.Panel>
+            <Accordion.Panel id="bio" header="Bio">
+              <UnorderedList listStyle="checkmark">
+                {Object.keys(item.biography).map((bio) => {
+                  const bioValue = item.biography[bio];
+                  return (
+                    <UnorderedList.Item key={bio}>
+                      <span>{bio}</span>:<span>{bioValue}</span>
+                    </UnorderedList.Item>
+                  );
+                })}
+              </UnorderedList>
+            </Accordion.Panel>
+          </Accordion>
+          <ChevronLink href="#">Details</ChevronLink>
         </Box>
-        <DimpleDivider />
-        <ChevronLink href="#">Details</ChevronLink>
-      </Box>
-    </Card>
-  </Box>
-);
+      </Card>
+    </Box>
+  );
+}
 
 export default App;

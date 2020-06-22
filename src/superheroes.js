@@ -14,7 +14,6 @@ const superheroes = [
     biography: {
       "full-name": "Bruce Wayne",
       "alter-egos": "No alter egos found.",
-      aliases: ["Insider", "Matches Malone"],
       "place-of-birth": "Crest Hill, Bristol Township; Gotham County",
       "first-appearance": "Detective Comics #27",
       publisher: "DC Comics",
@@ -58,15 +57,6 @@ const superheroes = [
     biography: {
       "full-name": "Clark Kent",
       "alter-egos": "Superman Prime One-Million",
-      aliases: [
-        "Clark Joseph Kent",
-        "The Man of Steel",
-        "the Man of Tomorrow",
-        "the Last Son of Krypton",
-        "Big Blue",
-        "the Metropolis Marvel",
-        "the Action Ace",
-      ],
       "place-of-birth": "Krypton",
       "first-appearance": "ACTION COMICS #1",
       publisher: "Superman Prime One-Million",
@@ -109,7 +99,6 @@ const superheroes = [
     biography: {
       "full-name": "Jay Garrick",
       "alter-egos": "No alter egos found.",
-      aliases: ["Jay Garrick", "Siegfreid the Speedster"],
       "place-of-birth": "Hibbardsville, Kansas",
       "first-appearance": "Flash Comics #1 (January 1940)",
       publisher: "DC Comics",
@@ -153,14 +142,6 @@ const superheroes = [
     biography: {
       "full-name": "Diana Prince",
       "alter-egos": "No alter egos found.",
-      aliases: [
-        "Princess Diana",
-        "Princess of the Amazons",
-        "Goddess of Truth",
-        " Wondy",
-        "Wonder Girl",
-        "The Amazon Princess",
-      ],
       "place-of-birth": "Themyscira",
       "first-appearance": "All-Star Comics #8 (December, 1941)",
       publisher: "DC Comics",
@@ -205,23 +186,6 @@ const superheroes = [
     biography: {
       "full-name": "Peter Parker",
       "alter-egos": "No alter egos found.",
-      aliases: [
-        "Spiderman",
-        "Bag-Man",
-        "Black Marvel",
-        "Captain Universe",
-        "Dusk",
-        "Green Hood",
-        "Hornet",
-        "Mad Dog 336",
-        "Peter Palmer",
-        "Prodigy",
-        "Ricochet",
-        "Scarlet Spider",
-        "Spider-Boy",
-        "Spider-Hulk",
-        "Spider-Morphosis",
-      ],
       "place-of-birth": "New York, New York",
       "first-appearance": "Amazing Fantasy #15",
       publisher: "Marvel Comics",
@@ -264,7 +228,6 @@ const superheroes = [
     biography: {
       "full-name": "Steve Rogers",
       "alter-egos": "No alter egos found.",
-      aliases: ["Nomad", "The Captain"],
       "place-of-birth": "Manhattan, New York City, New York",
       "first-appearance": "Captain America Comics #1 (March 1941)",
       publisher: "Marvel Comics",
@@ -308,14 +271,6 @@ const superheroes = [
     biography: {
       "full-name": "Tony Stark",
       "alter-egos": "No alter egos found.",
-      aliases: [
-        "Iron Knight",
-        "Hogan Potts",
-        "Spare Parts Man",
-        "Cobalt Man II",
-        "Crimson Dynamo",
-        "Ironman",
-      ],
       "place-of-birth": "Long Island, New York",
       "first-appearance": "Tales of Suspence #39 (March, 1963)",
       publisher: "Marvel Comics",
@@ -359,12 +314,6 @@ const superheroes = [
     biography: {
       "full-name": "Thor Odinson",
       "alter-egos": "Rune King Thor",
-      aliases: [
-        "Donald Blake",
-        "Sigurd Jarlson",
-        "Jake Olsen",
-        "Donar the Mighty",
-      ],
       "place-of-birth": "Asgard",
       "first-appearance": "Journey into Mystery #83 (August, 1962)",
       publisher: "Rune King Thor",
@@ -406,16 +355,6 @@ const superheroes = [
     biography: {
       "full-name": "Bruce Banner",
       "alter-egos": "No alter egos found.",
-      aliases: [
-        "Annihilator",
-        "Captain Universe",
-        "Joe Fixit",
-        "Mr. Fixit",
-        "Mechano",
-        "Professor",
-        "Jade Jaws",
-        "Golly Green Giant",
-      ],
       "place-of-birth": "Dayton, Ohio",
       "first-appearance": "Incredible Hulk #1 (May, 1962)",
       publisher: "Marvel Comics",
@@ -459,7 +398,6 @@ const superheroes = [
     biography: {
       "full-name": "Thanos",
       "alter-egos": "No alter egos found.",
-      aliases: ["The Mad Titan", "Masterlord", "The Overmaster", "Chins"],
       "place-of-birth": "Titan",
       "first-appearance": "Iron Man #55",
       publisher: "Marvel Comics",

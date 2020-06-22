@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
-import { AppTds } from "./App";
+import App, { AppTds } from "./App";
 import * as serviceWorker from "./serviceWorker";
 import { Switch, Route, BrowserRouter as Router } from "react-router-dom";
 import Details from "./details";
@@ -11,7 +11,8 @@ ReactDOM.render(
     <CSSReset />
     <Router>
       <Switch>
-        <Route path="/" exact component={AppTds}></Route>
+        <Route path="/beforeTDS" exact component={App}></Route>
+        <Route path="/afterTDS" exact component={AppTds}></Route>
         <Route path="/:id" component={Details}></Route>
       </Switch>
     </Router>
